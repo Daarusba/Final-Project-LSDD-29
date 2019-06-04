@@ -10,15 +10,17 @@ shinyUI(fluidPage(
     titlePanel("Final Project"),
     
     # Sidebar with a slider input for number of bins
-    navbarPage("Home",
-               tabPanel("Summary"
-                        
+    navbarPage("Group LSD",
+               tabPanel("Summary",
+                        mainPanel(
+                            textOutput("summaryText")
+                        )
                ),
                tabPanel("Revenue",
                         sidebarLayout(
                             sidebarPanel(
                                 selectInput("plot1Select",
-                                            label = h3("Selectbox"),
+                                            label = h3("Select a Genre"),
                                             choices = CHOICE)
                             ),
                             mainPanel(
@@ -31,7 +33,7 @@ shinyUI(fluidPage(
                         sidebarLayout(
                             sidebarPanel(
                                 selectInput("plot2Select",
-                                            label = h3("Selectbox"),
+                                            label = h3("Select a Genre"),
                                             choices = CHOICE)
                             ),
                             mainPanel(
@@ -44,7 +46,7 @@ shinyUI(fluidPage(
                         sidebarLayout(
                             sidebarPanel(
                                 selectInput("plot3Select",
-                                            label=h3("Selectbox"),
+                                            label=h3("Select a Genre"),
                                             choices = CHOICE)
                             ),
                             mainPanel(
@@ -57,7 +59,7 @@ shinyUI(fluidPage(
                         sidebarLayout(
                             sidebarPanel(
                                 sliderInput("range",
-                                            label = h3("Slider Range in Millions"),
+                                            label = h3("Slider, Range in Millions"),
                                             min = 0,
                                             max = 400,
                                             value = c(0,400))
@@ -75,7 +77,7 @@ shinyUI(fluidPage(
                                 
                             ),
                             mainPanel(
-                                textOutput("about")
+                                textOutput("aboutText")
                             )
                         )
                )

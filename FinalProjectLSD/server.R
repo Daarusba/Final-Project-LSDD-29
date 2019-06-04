@@ -26,13 +26,6 @@ shinyServer(function(input, output) {
             filter(str_detect(genres, input$plot3Select)) %>%
             select(c(genres, budget))
     })
-    
-    # might not be necessary since there isn't something like genre to generalize?
-    plot4DataText <- reactive({
-        movieData %>%
-            filter(str_detect(genres, input$plot4Range)) %>%
-            select(c(budget, revenue))
-    })
 
     output$plot1 <- renderPlot({
         plot1Data <- movieData %>% 
@@ -47,14 +40,10 @@ shinyServer(function(input, output) {
         plot1Values <- c(plot1Min, plot1Max, plot1Mean)
         plot1df <- data.frame(plot1Title, plot1Values)
         plot1df %>%
-            ggplot(aes(x = plot1Title, y = plot1Values)) +
-            geom_boxplot(fill = "cadetblue1", alpha = 0.5) +
-            labs(x = "Genre", y = "Revenue")
+            ggplot(aes(x = plot1Title, y = signif((plot1Values / 1000000), digits = 3))) +
+            geom_bar(fill = "cadetblue1", color = "black", alpha = 0.8, stat = "identity") +
+            labs(x = "Genre", y = "Revenue (Millions of USD)")
 
-    })
-    
-    output$p1Text <- renderText({
-        
     })
     
     output$plot2 <- renderPlot({
@@ -71,12 +60,8 @@ shinyServer(function(input, output) {
         plot2df <- data.frame(plot2Title, plot2Values)
         plot2df %>%
             ggplot(aes(x = plot2Title, y = plot2Values)) +
-            geom_boxplot(fill = "coral2", alpha = 0.5) +
-            labs(x = "Genre", y = "Average Rating received")
-    })
-    
-    output$p2Text <- renderText({
-        
+            geom_bar(fill = "coral2", color = "black", alpha = 0.8, stat = "identity") +
+            labs(x = "Genre", y = "Average Rating received (0 - 10 scale)")
     })
     
     output$plot3 <- renderPlot({
@@ -92,16 +77,28 @@ shinyServer(function(input, output) {
         plot3Values <- c(plot3Min, plot3Max, plot3Mean)
         plot3df <- data.frame(plot3Title, plot3Values)
         plot3df %>%
-            ggplot(aes(x = plot3Title, y = plot3Values)) +
-            geom_boxplot(fill = "aquamarine1", alpha = 0.5) +
-            labs(x = "Genre", y = "Budget Received")
-    })
-    
-    output$p3Text <- renderText({
-        
+            ggplot(aes(x = plot3Title, y = signif((plot3Values / 1000000), digits = 3))) +
+            geom_bar(fill = "aquamarine1", color = "black", alpha = 0.8, stat = "identity") +
+            labs(x = "Genre", y = "Budget Received (Millions of USD)")
     })
     
     output$plot4 <- renderPlot({
+        
+    })
+    
+    output$summaryText <- renderText({
+        
+    })
+    
+    output$p1Text <- renderText({
+        
+    })
+    
+    output$p2Text <- renderText({
+        
+    })
+    
+    output$p3Text <- renderText({
         
     })
     
@@ -109,7 +106,7 @@ shinyServer(function(input, output) {
         
     })
     
-    output$about <- renderText({
+    output$aboutText <- renderText({
         
     })
 
