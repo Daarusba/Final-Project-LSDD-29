@@ -1,0 +1,29 @@
+body {
+  background-color: #2B2B2B;
+  color: #ffffff;
+}
+
+a:link {
+  color: #58F0FC;
+}
+
+a:visited {
+  color: #B0F9FF;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.widget {
+  background-color: #2B2B2B;
+  color: #ffffff;
+}
+
+.panel {
+  background-color: #58F0FC
+}

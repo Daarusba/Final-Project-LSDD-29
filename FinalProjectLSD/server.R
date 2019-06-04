@@ -2,6 +2,7 @@ library(shiny)
 library(dplyr)
 library(stringr)
 library(ggplot2)
+library(markdown)
 
 movieData <- read.csv("./data/tmdb_5000_movies.csv")
 
@@ -83,10 +84,6 @@ shinyServer(function(input, output) {
     })
     
     output$plot4 <- renderPlot({
-        
-    })
-    
-    output$summaryText <- renderText({
         
     })
     
