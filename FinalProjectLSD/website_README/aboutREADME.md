@@ -1,6 +1,8 @@
 # Lelo Gemtessa
 
-Lelo is...
+Lelo was born and raised in Ethiopia but came to America 10 years ago for better
+education. She is a pre-med student currently in her third year of undergraduate and
+majoring in public health. She likes to dance and enjoy the sun.
 Lelo was in charge of working on the logic to be used within the server that constructs
 the plots, and finding insights to be listed about the plots and data. Lelo was also
 responsible for spearheading the development of what the UI would look like/accomplish,

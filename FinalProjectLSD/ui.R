@@ -14,6 +14,15 @@ shinyUI(fluidPage(
     
     # Code containing the top level navigation bar. Pages grouped as "Summary," 
     # "Revenue," "Ratings," "Budget," "Revenue and Budget," and "About Us"
+    
+    # "Revenue," "Ratings," and "Budget" all contain selectInput in order
+    # to determine which genre is examined.
+    
+    # "Revenue and Budget" contains a slider that determines the Budget range
+    # to be used for the X-axis of the plot.
+    
+    # Each plot is followed by an insertMarkdown command containing text that
+    # provides some insight/summary information into the data shown by the plot.
     navbarPage("Group LSD",
                tabPanel("Summary",
                         mainPanel(

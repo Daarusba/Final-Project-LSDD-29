@@ -28,6 +28,9 @@ shinyServer(function(input, output) {
             select(c(genres, budget))
     })
 
+    # A simple bar plot that gives a visual comparison between the minimum,
+    # maximum, and mean revenue of a single genre of film. Basic summary
+    # statistic are then provided.
     output$plot1 <- renderPlot({
         plot1Data <- movieData %>% 
             filter(str_detect(genres, input$plot1Select)) %>% 
@@ -47,6 +50,9 @@ shinyServer(function(input, output) {
 
     })
     
+    # A simple bar plot that gives a visual comparison between the minimum,
+    # maximum, and mean, average review score of a single genre of film. Basic summary
+    # statistic are then provided.
     output$plot2 <- renderPlot({
         plot2Data <- movieData %>% 
             filter(str_detect(genres, input$plot2Select)) %>% 
@@ -65,6 +71,9 @@ shinyServer(function(input, output) {
             labs(x = "Genre", y = "Average Rating received (0 - 10 scale)")
     })
     
+    # A simple bar plot that gives a visual comparison between the minimum,
+    # maximum, and mean budget of a single genre of film. Basic summary
+    # statistic are then provided.
     output$plot3 <- renderPlot({
         plot3Data <- movieData %>% 
             filter(str_detect(genres, input$plot3Select)) %>% 
@@ -83,9 +92,25 @@ shinyServer(function(input, output) {
             labs(x = "Genre", y = "Budget Received (Millions of USD)")
     })
     
+    # A scatter plot showing budget(x-axis) versus revenue(y-axis) of all of the
+    # films used within the data set.
     output$plot4 <- renderPlot({
-        
+        output$plot4 <- renderPlot({
+            plot4data <- movieData %>% 
+                mutate(budget = signif(budget / 1000000, digits = 3), 
+                       revenue = signif(revenue / 1000000, digits = 3)) %>% 
+                filter(budget >= input$range[1], budget <= input$range[2])
+            ggplot(plot4data, aes(x= budget, y= revenue)) +
+                geom_point() +
+                geom_smooth(method=lm) +
+                labs(title = "Budget and Revenue Correlation",
+                     x = "Budget Received (Millions of USD)",
+                     y = "Revenue (Millions of USD)")
+        })
     })
+    
+    # Output text showing summary statistics on the revenue, rating, or
+    # budget of a select genre.
     
     output$p1Text <- renderText({
         paste("The maximum revenue of this genre is",
@@ -116,9 +141,6 @@ shinyServer(function(input, output) {
               signif(min(plot3DataText()$budget / 1000000), digits = 3),
               "million USD.")
     })
-    
-    output$p4Text <- renderText({
-        
-    })
+
 
 })
