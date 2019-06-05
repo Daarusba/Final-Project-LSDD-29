@@ -10,7 +10,7 @@ shinyUI(fluidPage(
     img(src = "filmstrip.png", alt = "filmstrip"),
     
     # Application title
-    titlePanel("Film Statistics in Reference to Genre and Budget"),
+    titlePanel("Final Project"),
     
     # Code containing the top level navigation bar. Pages grouped as "Summary," 
     # "Revenue," "Ratings," "Budget," "Revenue and Budget," and "About Us"
@@ -21,90 +21,80 @@ shinyUI(fluidPage(
                         )
                ),
                tabPanel("Revenue",
-                        fluidRow(
-                            column(4,
+                        sidebarLayout(
+                            sidebarPanel(
                                 div(class = "widget",
                                     selectInput("plot1Select",
                                                 label = h3("Select a Genre"),
                                                 choices = CHOICE)
-                                ),
-                                includeMarkdown("website_README/plot1README.md")
+                                )
                             ),
-                            column(8,
+                            mainPanel(
                                 div(class = "panel",
-                                plotOutput("plot1"),
-                                textOutput("p1Text")
+                                plotOutput("plot1")#,
+                                # textOutput("p1Text")
                                 )
                             )
                         )
                ),
                tabPanel("Ratings",
-                        fluidRow(
-                            column(4,
+                        sidebarLayout(
+                            sidebarPanel(
                                 div(class = "widget",
                                 selectInput("plot2Select",
                                             label = h3("Select a Genre"),
                                             choices = CHOICE)
-                                ),
-                                includeMarkdown("website_README/plot2README.md")
+                                )
                             ),
-                            column(8,
+                            mainPanel(
                                 div(class = "panel",
-                                plotOutput("plot2"),
-                                textOutput("p2Text")
+                                plotOutput("plot2")#,
+                                # textOutput("p2Text")
                                 )
                             )
                         )
                ),
                tabPanel("Budget",
-                        fluidRow(
-                            column(4,
+                        sidebarLayout(
+                            sidebarPanel(
                                 div(class = "widget",
                                 selectInput("plot3Select",
                                             label=h3("Select a Genre"),
                                             choices = CHOICE)
-                                ),
-                                includeMarkdown("website_README/plot3README.md")
+                                )
                             ),
-                            column(8,
+                            mainPanel(
                                 div(class = "panel",
-                                plotOutput("plot3"),
-                                textOutput("p3Text")
+                                plotOutput("plot3")#,
+                                # textOutput("p3Text")
                                 )
                             )
                         )
                ),
-               tabPanel("Revenue versus Budget",
-                        fluidRow(
-                            column(4,
+               tabPanel("Revenue and Budget",
+                        sidebarLayout(
+                            sidebarPanel(
                                 div(class = "widget",
                                 sliderInput("range",
                                             label = h3("Slider, Range in Millions"),
                                             min = 0,
                                             max = 400,
                                             value = c(0,400))
-                                ),
-                                includeMarkdown("website_README/plot4README.md")
+                                )
                             ),
-                            column(8,
+                            mainPanel(
                                 div(class = "panel",
-                                plotOutput("plot4")
+                                plotOutput("plot4")#,
+                                # textOutput("p4Text")
                                 )
                             )
                         )
                         
                ),
                tabPanel("About Us",
-                        fluidRow(
-                            column(9,
-                                div(class = "about",
-                                    includeMarkdown("website_README/aboutREADME.md")
-                                )
-                            ),
-                            column(3,
-                                img(src = "spotlight.png", alt = "spotlight")
+                            mainPanel(
+                                includeMarkdown("website_README/aboutREADME.md")
                             )
-                        )
                )
     )
 ))

@@ -27,7 +27,7 @@ shinyServer(function(input, output) {
             filter(str_detect(genres, input$plot3Select)) %>%
             select(c(genres, budget))
     })
-
+    
     output$plot1 <- renderPlot({
         plot1Data <- movieData %>% 
             filter(str_detect(genres, input$plot1Select)) %>% 
@@ -44,7 +44,7 @@ shinyServer(function(input, output) {
             ggplot(aes(x = plot1Title, y = signif((plot1Values / 1000000), digits = 3))) +
             geom_bar(fill = "cadetblue1", color = "black", alpha = 0.8, stat = "identity") +
             labs(x = "Genre", y = "Revenue (Millions of USD)")
-
+        
     })
     
     output$plot2 <- renderPlot({
@@ -84,7 +84,13 @@ shinyServer(function(input, output) {
     })
     
     output$plot4 <- renderPlot({
-        
+        plot4Data <- movieData %>% 
+            #filter(str_detect(budget,input$range)) %>% 
+            select(c(budget, revenue))
+        ggplot(movieData, aes(x= signif((plot4Data$budget/ 1000000), digits = 3), y= signif((plot4Data$revenue/ 1000000), digits = 3))) +
+            geom_point() +
+            geom_smooth(method=lm) +
+            labs(title = "Budget and Revenue Correlation", x = "Budget Received (Millions of USD)", y = "Revenue (Millions of USD)")
     })
     
     output$p1Text <- renderText({
@@ -118,7 +124,8 @@ shinyServer(function(input, output) {
     })
     
     output$p4Text <- renderText({
-        
+        paste("Overall, there is a positive correlation between budget recieved and revenue made. 
+              The more budget recieved, the higher the revenue will be.")
     })
-
+    
 })
