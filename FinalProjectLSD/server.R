@@ -84,10 +84,10 @@ shinyServer(function(input, output) {
     })
     
     output$plot4 <- renderPlot({
-        plot4Data <- movieData %>% 
-            #filter(str_detect(budget,input$range)) %>% 
-            select(c(budget, revenue))
-        ggplot(movieData, aes(x= signif((plot4Data$budget/ 1000000), digits = 3), y= signif((plot4Data$revenue/ 1000000), digits = 3))) +
+        plot4data <- movieData %>% 
+            mutate(budget = signif(budget / 1000000, digits = 3), revenue = signif(revenue / 1000000, digits = 3)) %>% 
+            filter(budget >= input$range[1], budget <= input$range[2])
+        ggplot(plot4data, aes(x= budget, y= revenue)) +
             geom_point() +
             geom_smooth(method=lm) +
             labs(title = "Budget and Revenue Correlation", x = "Budget Received (Millions of USD)", y = "Revenue (Millions of USD)")
