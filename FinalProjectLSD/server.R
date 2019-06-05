@@ -44,8 +44,10 @@ shinyServer(function(input, output) {
         plot1Values <- c(plot1Min, plot1Max, plot1Mean)
         plot1df <- data.frame(plot1Title, plot1Values)
         plot1df %>%
-            ggplot(aes(x = plot1Title, y = signif((plot1Values / 1000000), digits = 3))) +
-            geom_bar(fill = "cadetblue1", color = "black", alpha = 0.8, stat = "identity") +
+            ggplot(aes(x = plot1Title, y = signif((plot1Values / 1000000),
+                                                  digits = 3))) +
+            geom_bar(fill = "cadetblue1", color = "black", alpha = 0.8,
+                     stat = "identity") +
             labs(x = "Genre", y = "Revenue (Millions of USD)")
 
     })
@@ -67,7 +69,8 @@ shinyServer(function(input, output) {
         plot2df <- data.frame(plot2Title, plot2Values)
         plot2df %>%
             ggplot(aes(x = plot2Title, y = plot2Values)) +
-            geom_bar(fill = "coral2", color = "black", alpha = 0.8, stat = "identity") +
+            geom_bar(fill = "coral2", color = "black", alpha = 0.8,
+                     stat = "identity") +
             labs(x = "Genre", y = "Average Rating received (0 - 10 scale)")
     })
     
@@ -87,8 +90,10 @@ shinyServer(function(input, output) {
         plot3Values <- c(plot3Min, plot3Max, plot3Mean)
         plot3df <- data.frame(plot3Title, plot3Values)
         plot3df %>%
-            ggplot(aes(x = plot3Title, y = signif((plot3Values / 1000000), digits = 3))) +
-            geom_bar(fill = "darkgoldenrod1", color = "black", alpha = 0.8, stat = "identity") +
+            ggplot(aes(x = plot3Title, y = signif((plot3Values / 1000000),
+                                                  digits = 3))) +
+            geom_bar(fill = "darkgoldenrod1", color = "black", alpha = 0.8,
+                     stat = "identity") +
             labs(x = "Genre", y = "Budget Received (Millions of USD)")
     })
     
@@ -96,12 +101,14 @@ shinyServer(function(input, output) {
     # films used within the data set.
     output$plot4 <- renderPlot({
         plot4data <- movieData %>% 
-            mutate(budget = signif(budget / 1000000, digits = 3), revenue = signif(revenue / 1000000, digits = 3)) %>% 
+            mutate(budget = signif(budget / 1000000, digits = 3), 
+                   revenue = signif(revenue / 1000000, digits = 3)) %>% 
             filter(budget >= input$range[1], budget <= input$range[2])
         ggplot(plot4data, aes(x= budget, y= revenue)) +
             geom_point() +
             geom_smooth(method=lm) +
-            labs(title = "Budget and Revenue Correlation", x = "Budget Received (Millions of USD)", y = "Revenue (Millions of USD)")
+            labs(title = "Budget and Revenue Correlation", x = "Budget Rece
+                 ived (Millions of USD)", y = "Revenue (Millions of USD)")
     })
     
     # Output text showing summary statistics on the revenue, rating, or

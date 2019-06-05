@@ -33,7 +33,7 @@ shinyUI(fluidPage(
                ),
                tabPanel("Revenue",
                         fluidRow(
-                            column(4,
+                            column(5,
                                 div(class = "widget",
                                     selectInput("plot1Select",
                                                 label = h3("Select a Genre"),
@@ -41,7 +41,7 @@ shinyUI(fluidPage(
                                 ),
                                 includeMarkdown("website_README/plot1README.md")
                             ),
-                            column(8,
+                            column(7,
                                 div(class = "panel",
                                 plotOutput("plot1"),
                                 textOutput("p1Text")
@@ -87,7 +87,7 @@ shinyUI(fluidPage(
                ),
                tabPanel("Revenue versus Budget",
                         fluidRow(
-                            column(4,
+                            column(3,
                                 div(class = "widget",
                                 sliderInput("range",
                                             label = h3("Slider, Range in Millions"),
@@ -97,7 +97,7 @@ shinyUI(fluidPage(
                                 ),
                                 includeMarkdown("website_README/plot4README.md")
                             ),
-                            column(8,
+                            column(9,
                                 div(class = "panel",
                                 plotOutput("plot4")
                                 )

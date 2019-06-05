@@ -11,7 +11,6 @@ and was helpful in doing so.
 
 # Shinichiro Aoyagi
 
-Shin is...
 Shin was in charge of constructing and code for the UI of the website, including its
 widgets, and ensuring that it all was implemented correctly. Without this, the website
 would have essentially been defunct.
