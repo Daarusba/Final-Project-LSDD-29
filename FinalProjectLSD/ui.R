@@ -51,7 +51,7 @@ shinyUI(fluidPage(
                ),
                tabPanel("Ratings",
                         fluidRow(
-                            column(4,
+                            column(6,
                                 div(class = "widget",
                                 selectInput("plot2Select",
                                             label = h3("Select a Genre"),
@@ -59,7 +59,7 @@ shinyUI(fluidPage(
                                 ),
                                 includeMarkdown("website_README/plot2README.md")
                             ),
-                            column(8,
+                            column(6,
                                 div(class = "panel",
                                 plotOutput("plot2"),
                                 textOutput("p2Text")
@@ -69,7 +69,7 @@ shinyUI(fluidPage(
                ),
                tabPanel("Budget",
                         fluidRow(
-                            column(4,
+                            column(5,
                                 div(class = "widget",
                                 selectInput("plot3Select",
                                             label=h3("Select a Genre"),
@@ -77,7 +77,7 @@ shinyUI(fluidPage(
                                 ),
                                 includeMarkdown("website_README/plot3README.md")
                             ),
-                            column(8,
+                            column(7,
                                 div(class = "panel",
                                 plotOutput("plot3"),
                                 textOutput("p3Text")
