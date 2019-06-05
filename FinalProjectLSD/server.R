@@ -95,20 +95,6 @@ shinyServer(function(input, output) {
     # A scatter plot showing budget(x-axis) versus revenue(y-axis) of all of the
     # films used within the data set.
     output$plot4 <- renderPlot({
-<<<<<<< HEAD
-        output$plot4 <- renderPlot({
-            plot4data <- movieData %>% 
-                mutate(budget = signif(budget / 1000000, digits = 3), 
-                       revenue = signif(revenue / 1000000, digits = 3)) %>% 
-                filter(budget >= input$range[1], budget <= input$range[2])
-            ggplot(plot4data, aes(x= budget, y= revenue)) +
-                geom_point() +
-                geom_smooth(method=lm) +
-                labs(title = "Budget and Revenue Correlation",
-                     x = "Budget Received (Millions of USD)",
-                     y = "Revenue (Millions of USD)")
-        })
-=======
         plot4Data <- movieData %>% 
             #filter(str_detect(budget,input$range)) %>% 
             select(c(budget, revenue))
@@ -116,7 +102,6 @@ shinyServer(function(input, output) {
             geom_point() +
             geom_smooth(method=lm) +
             labs(title = "Budget and Revenue Correlation", x = "Budget Received (Millions of USD)", y = "Revenue (Millions of USD)")
->>>>>>> parent of 7ae8183... range widget fixed
     })
     
     # Output text showing summary statistics on the revenue, rating, or

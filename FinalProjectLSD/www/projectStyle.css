@@ -11,6 +11,15 @@ a:visited {
   color: #B0F9FF;
 }
 
+.filmImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85%;
+  height: auto;
+}
+  
+
 img {
   display: block;
   margin-left: auto;
@@ -18,7 +27,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 .about {
   color: #E1FDFF;

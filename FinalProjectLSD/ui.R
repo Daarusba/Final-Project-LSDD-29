@@ -7,7 +7,9 @@ CHOICE <- c("Action" = "Action", "Adventure" = "Adventure",
 shinyUI(fluidPage(
     
     theme = "projectStyle.css",
-    img(src = "filmstrip.png", alt = "filmstrip"),
+    div(class = "filmImg",
+        img(src = "filmstrip.png", alt = "filmstrip")
+            ),
     
     # Application title
     titlePanel("Film Statistics in Reference to Genre and Budget"),
