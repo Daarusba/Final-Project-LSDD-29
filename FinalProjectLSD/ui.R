@@ -24,7 +24,7 @@ shinyUI(fluidPage(
     # to be used for the X-axis of the plot.
     
     # Each plot is followed by an insertMarkdown command containing text that
-    # provides some insight/summary information into the data shown by the plot.
+    # provides some  insight/summary information into the data shown by the plot.
     navbarPage("Group LSD",
                tabPanel("Summary",
                         # mainPanel(]

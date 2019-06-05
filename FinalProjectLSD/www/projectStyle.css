@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(#2B2B2B, #525252);
+  background-image: linear-gradient(#2B2B2B, #383838	);
   color: #ffffff;
 }
 
@@ -36,11 +36,11 @@ img {
 }
 
 .widget {
-  border-radius: 25px;
+  border-radius: 5px;
   border: 2px solid #E5DE40;
   background-color: #2B2B2B;
   color: #ffffff;
-    padding: 15px 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
 }
 
 .panel {

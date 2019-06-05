@@ -45,8 +45,9 @@ cetera.
   text-align: center;
   }
   div.paragraph {
-  border-style: dashed;
-  border-color: white;
+    background-color: #2B2B2B;
+  border-style: solid;
+  border-color: #E5DE40;
   border-radius: 5px;
   border-width: 2px;
   padding: 15px 15px 15px 15px;
