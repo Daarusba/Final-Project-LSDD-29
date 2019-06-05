@@ -1,6 +1,6 @@
 # Final Project, Group LSD
 ### Lelo Gemtessa, Shinichiro Aoyagi, Darian Baruso
-#### [Link to the shinyapps.io web page]()
+#### [Link to the shinyapps.io web page](https://daarusba.shinyapps.io/FilmStatsonGenre/)
 #### [Link to the origin of the dataset](https://www.kaggle.com/tmdb/tmdb-movie-metadata#tmdb_5000_movies.csv)
 
 ## Purpose of the Project

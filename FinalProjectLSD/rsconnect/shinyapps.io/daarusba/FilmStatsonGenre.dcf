@@ -1,0 +1,12 @@
+name: FilmStatsonGenre
+title: FilmStatsonGenre
+username:
+account: daarusba
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 967540
+bundleId: 2133438
+url: https://daarusba.shinyapps.io/FilmStatsonGenre/
+when: 1559758482.49231
+asMultiple: FALSE
+asStatic: FALSE
