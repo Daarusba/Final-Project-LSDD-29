@@ -1,5 +1,5 @@
 body {
-  background-color: #2B2B2B;
+  background-image: linear-gradient(#2B2B2B, #525252);
   color: #ffffff;
 }
 
@@ -19,7 +19,17 @@ img {
   height: auto;
 }
 
+
+.about {
+  color: #E1FDFF;
+  border: 50px solid transparent;
+  padding: 80px;
+  border-image: url(filmstockBorder.png) 50 round;
+}
+
 .widget {
+  border-radius: 25px;
+  border: 2px solid #E5DE40;
   background-color: #2B2B2B;
   color: #ffffff;
 }

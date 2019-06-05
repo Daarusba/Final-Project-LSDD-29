@@ -79,7 +79,7 @@ shinyServer(function(input, output) {
         plot3df <- data.frame(plot3Title, plot3Values)
         plot3df %>%
             ggplot(aes(x = plot3Title, y = signif((plot3Values / 1000000), digits = 3))) +
-            geom_bar(fill = "aquamarine1", color = "black", alpha = 0.8, stat = "identity") +
+            geom_bar(fill = "darkgoldenrod1", color = "black", alpha = 0.8, stat = "identity") +
             labs(x = "Genre", y = "Budget Received (Millions of USD)")
     })
     
@@ -88,22 +88,36 @@ shinyServer(function(input, output) {
     })
     
     output$p1Text <- renderText({
-        
+        paste("The maximum revenue of this genre is",
+              round(max(plot1DataText()$revenue)), "USD.", 
+              "The mean revenue of this genre is", 
+              round(mean(plot1DataText()$revenue)), "USD.", 
+              "The minimum revenue of this genre is", 
+              round(min(plot1DataText()$revenue)), "USD.")
     })
     
     output$p2Text <- renderText({
-        
+        paste("The maximum, average rating of this genre is",
+              max(plot2DataText()$vote_average), "out of 10.", 
+              "The mean, average rating of this genre is", 
+              signif(mean(plot2DataText()$vote_average), digits = 2), "out of 10.", 
+              "The minimum, average rating of this genre is", 
+              min(plot2DataText()$vote_average), "out of 10.")
     })
     
     output$p3Text <- renderText({
-        
+        paste("The maximum budget of this genre is",
+              signif(max(plot3DataText()$budget / 1000000), digits = 3),
+              "millions of USD.", 
+              "The mean budget of this genre is", 
+              signif(mean(plot3DataText()$budget / 1000000), digits = 3),
+              "millions of USD.", 
+              "The minimum budget of this genre is", 
+              signif(min(plot3DataText()$budget / 1000000), digits = 3),
+              "millions of USD.")
     })
     
     output$p4Text <- renderText({
-        
-    })
-    
-    output$aboutText <- renderText({
         
     })
 
