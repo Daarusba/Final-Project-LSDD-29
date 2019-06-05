@@ -27,9 +27,9 @@ shinyUI(fluidPage(
     # provides some insight/summary information into the data shown by the plot.
     navbarPage("Group LSD",
                tabPanel("Summary",
-                        mainPanel(
+                        # mainPanel(]
                             includeMarkdown("website_README/summaryREADME.md")
-                        )
+                        # )
                ),
                tabPanel("Revenue",
                         fluidRow(
