@@ -108,13 +108,13 @@ shinyServer(function(input, output) {
     output$p3Text <- renderText({
         paste("The maximum budget of this genre is",
               signif(max(plot3DataText()$budget / 1000000), digits = 3),
-              "millions of USD.", 
+              "million USD.", 
               "The mean budget of this genre is", 
               signif(mean(plot3DataText()$budget / 1000000), digits = 3),
-              "millions of USD.", 
+              "million USD.", 
               "The minimum budget of this genre is", 
               signif(min(plot3DataText()$budget / 1000000), digits = 3),
-              "millions of USD.")
+              "million USD.")
     })
     
     output$p4Text <- renderText({

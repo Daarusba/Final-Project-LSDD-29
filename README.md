@@ -19,14 +19,20 @@ least amount of risk. More specifically, we are addressing _four_ questions...
 
 ## About the Data
 The data itself is in the form of a csv file from the website,
-[Kaggle](https://www.kaggle.com/). They generated the data set using The Movie Database's
-API. They, and by extension Group LSD, would like to emphasize that their product uses
-the TMDb API but is not endorsed or certified by TMDb itself. The data set _was_ created
-within the year 2017, so it therefore does not contain any information on films released
-after its conception, and is further limited to what was available on TMDb at the
-time/what was accessed. This means that certain contemporary films that would skew the
-data, such as Avengers: Endgame, are absent. Oddly enough, and although we did not
-extensively search for more individual cases, Get Out (2017) is also absent from the data
-set. This, again, brings into focus that the data set is limited to what was
-available/what was accessed from TMDb.
+[Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata#tmdb_5000_movies.csv). They
+generated the data set using The Movie Database's API. They, and by extension Group LSD,
+would like to emphasize that their product uses the TMDb API but is not endorsed or
+certified by TMDb itself. The data set _was_ created within the year 2017, so it
+therefore does not contain any information on films released after its conception, and is
+further limited to what was available on TMDb at the time/what was accessed. This means
+that certain contemporary films that would skew the data, such as Avengers: Endgame, are
+absent. Also, we isolated the genres to those among the most popular of 2017, omitting
+genres such as "Family." Oddly enough, and although we did not extensively search for
+more individual cases, Get Out (2017) is also absent from the data set. This, again,
+brings into focus that the data set is limited to what was available/what was accessed
+from TMDb. Some specific examples of limited availability in the data include if a movie
+had yet to be released, a small sample size of reviews, a lack of released data, et
+cetera.
+
+
 

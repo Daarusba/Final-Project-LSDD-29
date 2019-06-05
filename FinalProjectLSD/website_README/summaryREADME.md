@@ -23,7 +23,11 @@ certified by TMDb itself. The data set _was_ created within the year 2017, so it
 therefore does not contain any information on films released after its conception, and is
 further limited to what was available on TMDb at the time/what was accessed. This means
 that certain contemporary films that would skew the data, such as Avengers: Endgame, are
-absent. Oddly enough, and although we did not extensively search for more individual
-cases, Get Out (2017) is also absent from the data set. This, again, brings into focus
-that the data set is limited to what was available/what was accessed from TMDb.
+absent. Also, we isolated the genres to those among the most popular of 2017, omitting
+genres such as "Family." Oddly enough, and although we did not extensively search for
+more individual cases, Get Out (2017) is also absent from the data set. This, again,
+brings into focus that the data set is limited to what was available/what was accessed
+from TMDb. Some specific examples of limited availability in the data include if a movie
+had yet to be released, a small sample size of reviews, a lack of released data, et
+cetera.
 
